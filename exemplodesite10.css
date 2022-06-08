@@ -1,0 +1,225 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;;
+}
+
+body {
+	background: #ff0;
+}
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	z-index: 1000;
+	padding: 30px 100px;
+}
+
+header .logo {
+	pointer-events: relative;
+	color: #fff;
+	font-weight: 700;
+	font-size: 2em;
+	text-decoration: none;
+
+}
+
+header ul {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header ul li {
+	position: relative;
+	list-style: none;
+	margin-left: 40px;
+}
+
+header ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.banner {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.banner .imgbox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.banner .imgbox img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0;
+	transition: 0.5s;
+	background-position: center;
+
+}
+
+.banner .imgbox img.active { 
+	opacity: 1;
+
+ }
+
+ .controls {
+ 	position: absolute;
+ 	top: 50%;
+ 	transform: translateY(-50%);
+ 	right: 0;
+ 	width: 80px;
+ }
+
+.controls li {
+	position: relative;
+	width: 80px;
+	height: 80px;
+	background: #fff;
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.controls li:hover {
+	background: #ffeb3b;
+}
+
+.controls li:before {
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-left: 3px solid #111;
+	border-bottom: 3px solid #111;
+	transform: rotate(45deg);
+}
+
+.controls li:nth-child(2):before {
+	transform: rotate(225deg);
+}
+
+.contentBox {
+	position: absolute;
+	bottom: 1px;
+	max-width: 800px;
+	left: -100px;
+
+}
+
+.contentBox div {
+	display: none;
+}
+
+.contentBox div.active {
+	display: block;
+	padding-left: 70px;
+	margin-left: 100px;
+	padding-top: 35px;
+	padding-bottom: 25px;
+	background: rgba(0, 0, 0,0.2);
+}
+
+.contentBox div h2 {
+	color: #fff;
+	font-size: 1.9em;
+
+}
+
+.contentBox div p{
+	color: #fff;
+	font-size: 1em;
+}
+
+.contentBox div a {
+	color: #111;
+	font-size: 1.1em;
+	display: inline-block;
+	padding: 10px 30px;
+	background: #fff;
+	margin-top: 20px;
+	font-weight: 400px;
+	text-decoration: none;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+
+@media (max-width: 991px) {
+	header {
+		padding: 40px;
+	}
+	section {
+		padding: 150px 40px;
+	}
+
+	.contentBox {
+		flex-direction: column;
+	}
+
+	.contentBox .textbox,
+	.banner .imgbox {
+		max-width: 100%;
+	}
+
+	header .navigation {
+		display: none;
+	}
+	header .navigation.active {
+		display: flex;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: darkgray;
+		z-index: 10;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	header .navigation li a {
+		
+		margin: 10px 0;
+		font-size: 1.5em;
+		font-weight: 300;
+	}
+	.toggle {
+		position: relative;
+		width: 30px;
+		height: 30px;
+		background: url(menu.png);
+		background-size: 30px;
+		background-repeat: no-repeat;
+		background-position: center;
+		z-index: 10000;
+	}
+
+	.toggle.active {
+		position: fixed;
+		right: 40px;
+		background: url(close.png);
+		background-size: 25px;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}
+
+
+
